@@ -1,0 +1,131 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    place-items: center;
+    display: grid;
+    background: linear-gradient(#007acc, #6DD5Fa, #FFFFFF);
+}.box{
+    width: 70%;
+    height: auto;
+    background-color: #fff;
+    padding: 20px;
+}
+.box .top_part{
+    width: 100%;
+    position: relative;
+    /* border:2px solid rebeccapurple; */
+}
+.box .title_part{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title_part h2{
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: .6;
+}
+hr{
+    margin: 20px 0;
+}
+.title_part .sound{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title_part .sound span{
+    margin-right: 10px;
+    opacity: .6;
+}
+input[type="checkbox"]{
+    width: 40px;
+    height: 20px;
+    appearance: none;
+    border-radius: 40px;
+    background-color: #fff;
+    border: 1px solid black;
+    position: relative;
+    cursor: pointer;
+}
+input[type="checkbox"]::before{
+    position: absolute;
+    width: 20px;
+    height: 19px;
+    content: '';
+    border-radius: 100%;
+    background: linear-gradient(#007acc, #6DD5Fa, #FFFFFF);
+    left: 0;
+    transition-duration: 300ms;
+}
+input[type="checkbox"]:checked::before{
+    left: 19px;
+}
+.type-content input{
+    opacity: 0;
+    z-index: -999;
+    position: absolute;
+}
+.type-content p{
+    /* border: 1px solid red; */
+    font-size: 1.2rem;
+    opacity: .7;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    text-align: justify ;
+    line-height: 1.2;
+}
+.bottom_part{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 25px 10px;
+    box-shadow: 20px 9px 20px rgba(235, 28, 28, 0.144);
+    border-radius: 5px;
+}
+.bottom_part p{
+    font-size: 1.1rem;
+}
+.bottom_part button{
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: linear-gradient(#007acc, #6DD5Fa, #FFFFFF);
+    /* background-color: #589dcb; */
+    color: white;
+}
+::selection{
+    background-color: rgb(218, 90, 90);
+    color: white;
+}
+.active{
+    opacity: .7;
+    position: relative;
+}
+.active::before{
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 100%;
+    opacity: 0;
+    background-color: black;
+    right: 0;
+    animation: blink .5s linear infinite;
+}
+@keyframes blink{
+    50%{
+        opacity: 1;
+    }
+}
