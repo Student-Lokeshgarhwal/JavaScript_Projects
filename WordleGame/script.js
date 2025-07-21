@@ -217,6 +217,27 @@ function update() {
     col = 0; //start at 0 for new row
 }
 
-document.getElementById("info").addEventListener('click',()=>{
-    alert("ok")
-})
+let flag = true;
+
+const infoBox = ()=>{
+   if(flag){ document.getElementById("main").classList.add("main")
+    document.querySelectorAll(".keyboard-row").forEach((e)=>{
+        e.classList.add("main")
+    })
+    document.getElementById("rules").classList.remove("rulesHide")
+    document.getElementById("rules").classList.add("rulesShow")
+    flag = !flag;
+}else{
+    document.getElementById("main").classList.remove("main")
+    document.querySelectorAll(".keyboard-row").forEach((e)=>{
+        e.classList.remove("main")
+    })
+    document.getElementById("rules").classList.remove("rulesShow")
+    document.getElementById("rules").classList.add("rulesHide")
+    flag =!flag;
+ 
+}
+}
+
+document.getElementById("icon").addEventListener('click',infoBox)
+document.getElementById("cancle").addEventListener('click',infoBox)
