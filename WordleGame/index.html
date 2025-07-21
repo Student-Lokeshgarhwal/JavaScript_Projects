@@ -1,43 +1,44 @@
-
 <html lang="en">
-    <head>
-        <title>Wordle</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale = 1.0">
-        <link rel="stylesheet" href="style.css">
-    </head>
 
-    <body>
-        <div id="main">
-            <h1 id="title">WordleGame</h1>
-        <hr>
-        <br>
-        <div id="board">
-        </div>
-        <br>
-        <h1 id="answer"></h1>
-        </div>
-        <div id="info">
-            <p>info</p>
-            <img src="images/circle-info-solid.svg" alt="" id="icon">
-        </div>
-        <div id="rules" class="rulesHide">
-            <h1>How To Play</h1>
-            <p>Guess the Wordle in 6 tries</p>
-            <ul>
-                <li>Each guess must be a valid 5 letter word.</li>
-                <li>The color of the tiles will change to show how close your guess was to the word.</li>
-            </ul>
-            <ol>
-                <li><b>Green :</b> letter is in the word and in the correct spot</li>
-                <li><b>Yellow :</b> letter is in the word but in the wrong spot</li>
-                <li><b>Gray :</b> letter is not in the word in any spot</li>
-            </ol>
-            <p>Press "Enter" to make a guess.</p>
-            <p>Good luck!</p>
-            <img src="images/xmark-solid.svg" alt="" id="cancle">
-        </div>
-        <script src="lists.js"></script>
-        <script src="script.js"></script>
-    </body>
+<head>
+  <title>Wordle</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="main">
+    <h1 id="title">WordleGame</h1>
+    <hr>
+    <br>
+    <div id="board">
+    </div>
+    <br>
+    <h1 id="answer"></h1>
+  </div>
+  <div id="info">
+    <p>info</p>
+    <img src="images/circle-info-solid.svg" alt="" id="icon">
+  </div>
+  <div id="rules" class="rulesHide">
+    <h1>How To Play</h1>
+    <p>Guess the Wordle in 6 tries</p>
+    <ul>
+      <li>Each guess must be a valid 5 letter word.</li>
+      <li>The color of the tiles will change to show how close your guess was to the word.</li>
+    </ul>
+    <ol>
+      <li><b>Green :</b> letter is in the word and in the correct spot</li>
+      <li><b>Yellow :</b> letter is in the word but in the wrong spot</li>
+      <li><b>Gray :</b> letter is not in the word in any spot</li>
+    </ol>
+    <p>Press "Enter" to make a guess.</p>
+    <p>Good luck!</p>
+    <img src="images/xmark-solid.svg" alt="" id="cancle">
+  </div>
+  <script src="lists.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>

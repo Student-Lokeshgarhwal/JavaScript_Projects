@@ -11,10 +11,10 @@ var gameOver = false;
 
 guessList = guessList.concat(wordList);
 
-var word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
+var word = wordList[Math.floor(Math.random() * wordList.length)].toUpperCase();
 console.log(word);
 
-window.onload = function(){
+window.onload = function () {
     intialize();
 }
 
@@ -37,7 +37,7 @@ function intialize() {
     let keyboard = [
         ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
         ["A", "S", "D", "F", "G", "H", "J", "K", "L", " "],
-        ["Enter", "Z", "X", "C", "V", "B", "N", "M", "⌫" ]
+        ["Enter", "Z", "X", "C", "V", "B", "N", "M", "⌫"]
     ]
 
     for (let i = 0; i < keyboard.length; i++) {
@@ -58,7 +58,7 @@ function intialize() {
             }
             else if ("A" <= key && key <= "Z") {
                 keyTile.id = "Key" + key; // "Key" + "A";
-            } 
+            }
 
             keyTile.addEventListener("click", processKey);
 
@@ -71,7 +71,7 @@ function intialize() {
         }
         document.body.appendChild(keyboardRow);
     }
-    
+
 
     // Listen for Key Press
     document.addEventListener("keyup", (e) => {
@@ -81,12 +81,12 @@ function intialize() {
 }
 
 function processKey() {
-    e = { "code" : this.id };
+    e = { "code": this.id };
     processInput(e);
 }
 
 function processInput(e) {
-    if (gameOver) return; 
+    if (gameOver) return;
 
     // alert(e.code);
     if ("KeyA" <= e.code && e.code <= "KeyZ") {
@@ -100,7 +100,7 @@ function processInput(e) {
     }
     else if (e.code == "Backspace") {
         if (0 < col && col <= width) {
-            col -=1;
+            col -= 1;
         }
         let currTile = document.getElementById(row.toString() + '-' + col.toString());
         currTile.innerText = "";
@@ -137,7 +137,7 @@ function update() {
         document.getElementById("answer").innerText = "Not in word list";
         return;
     }
-    
+
     //start processing guess
     let correct = 0;
 
@@ -148,10 +148,10 @@ function update() {
         let letter = word[i];
 
         if (letterCount[letter]) {
-           letterCount[letter] += 1;
-        } 
+            letterCount[letter] += 1;
+        }
         else {
-           letterCount[letter] = 1;
+            letterCount[letter] = 1;
         }
     }
 
@@ -178,9 +178,9 @@ function update() {
 
         if (correct == width) {
             gameOver = true;
-            setTimeout(()=>{
-            alert("You have won the game")
-            },100)
+            setTimeout(() => {
+                alert("You have won the game")
+            }, 100)
         }
     }
 
@@ -196,14 +196,14 @@ function update() {
             //Is it in the word?         //make sure we don't double count
             if (word.includes(letter) && letterCount[letter] > 0) {
                 currTile.classList.add("present");
-                
+
                 let keyTile = document.getElementById("Key" + letter);
                 if (!keyTile.classList.contains("correct")) {
                     keyTile.classList.add("present");
                 }
                 letterCount[letter] -= 1;
                 console.log(letterCount[letter] + " after present")
-            } 
+            }
             // Not in the word or (was in word but letters all used up to avoid overcount)
             else {
                 currTile.classList.add("absent");
@@ -219,25 +219,26 @@ function update() {
 
 let flag = true;
 
-const infoBox = ()=>{
-   if(flag){ document.getElementById("main").classList.add("main")
-    document.querySelectorAll(".keyboard-row").forEach((e)=>{
-        e.classList.add("main")
-    })
-    document.getElementById("rules").classList.remove("rulesHide")
-    document.getElementById("rules").classList.add("rulesShow")
-    flag = !flag;
-}else{
-    document.getElementById("main").classList.remove("main")
-    document.querySelectorAll(".keyboard-row").forEach((e)=>{
-        e.classList.remove("main")
-    })
-    document.getElementById("rules").classList.remove("rulesShow")
-    document.getElementById("rules").classList.add("rulesHide")
-    flag =!flag;
- 
-}
+const infoBox = () => {
+    if (flag) {
+        document.getElementById("main").classList.add("main")
+        document.querySelectorAll(".keyboard-row").forEach((e) => {
+            e.classList.add("main")
+        })
+        document.getElementById("rules").classList.remove("rulesHide")
+        document.getElementById("rules").classList.add("rulesShow")
+        flag = !flag;
+    } else {
+        document.getElementById("main").classList.remove("main")
+        document.querySelectorAll(".keyboard-row").forEach((e) => {
+            e.classList.remove("main")
+        })
+        document.getElementById("rules").classList.remove("rulesShow")
+        document.getElementById("rules").classList.add("rulesHide")
+        flag = !flag;
+
+    }
 }
 
-document.getElementById("icon").addEventListener('click',infoBox)
-document.getElementById("cancle").addEventListener('click',infoBox)
+document.getElementById("icon").addEventListener('click', infoBox)
+document.getElementById("cancle").addEventListener('click', infoBox)

@@ -112,7 +112,7 @@ hr {
     /* border: 1px solid black; */
 }
 
-#info p{
+#info p {
     position: absolute;
     top: -13px;
     right: 23px;
@@ -120,7 +120,7 @@ hr {
     display: none;
 }
 
-#info:hover p{
+#info:hover p {
     display: block;
 }
 
@@ -141,12 +141,12 @@ hr {
     background-color: white;
 }
 
-.rulesHide{
+.rulesHide {
     z-index: 0;
     opacity: 0;
 }
 
-.rulesShow  {
+.rulesShow {
     z-index: 1;
     opacity: 1;
 }
@@ -154,7 +154,8 @@ hr {
 #rules h1 {
     margin: 0 auto;
 }
-#rules h1:hover{
+
+#rules h1:hover {
     border-bottom: 1px solid black;
     letter-spacing: 1.2px;
 }
@@ -170,7 +171,7 @@ ol {
     line-height: 22px;
 }
 
-#cancle{
+#cancle {
     position: absolute;
     right: 10px;
     top: 5px;
@@ -179,14 +180,14 @@ ol {
 }
 
 @media screen and (max-width: 950px) {
-    #rules{
+    #rules {
         left: 0;
         width: 100%;
     }
 }
 
 @media screen and (max-width: 375px) {
-    .keyboard-row{
+    .keyboard-row {
         width: 230px;
     }
 }
