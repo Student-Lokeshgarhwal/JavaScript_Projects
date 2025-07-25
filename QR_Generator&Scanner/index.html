@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR_Generator&Scanner</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="mainContainer">
+    <div id="generatorContainer">
+      <h1 id="generatorHead" class="heading">QR Code Generator</h1>
+      <div class="box" id="generatorBox">
+        <div class="content">
+          <div class="contentText">
+            <h2>QR Code Generator</h2>
+            <p>Paste a url or enter text to create QR Code</p>
+          </div>
+          <input type="text" placeholder="Enter text or url" id="inputText">
+          <button id="generateBtn">Generate QR Code</button>
+        </div>
+      </div>
+    </div>
+    <div id="scannerContainer">
+      <h1 id="scannerHead" class="heading">QR Code Scanner</h1>
+      <div class="box" id="scannerBox">
+        <div class="content" id="content2">
+          <form action="#" id="scannerForm">
+            <input type="file" id="chooseFile" hidden>
+            <img src="./QRIMG.png" alt="" class="QRImg">
+            <div class="formData">
+              <i class="fa-solid fa-cloud-arrow-up" id="uploadImg"></i>
+              <p>Upload QR Code to Scan</p>
+            </div>
+          </form>
+          <div class="scannerInfo">
+            <div id="contentInfo">
+              <p id="contentPara"></p>
+            </div>
+            <div class="btns">
+              <button id="close" class="scannerInfoBtn">Close</button>
+              <button id="copyText" class="scannerInfoBtn">Copy Text</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
