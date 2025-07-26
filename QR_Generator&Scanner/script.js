@@ -1,14 +1,21 @@
 let input = document.getElementById("inputText")
 let generateBtn = document.getElementById("generateBtn")
+let img = document.getElementById("generateImg")
+
+
+let flag = true;
 
 generateBtn.addEventListener("click", async () => {
     let inputValue = input.value
-    let img = document.createElement("img")
     img.src = `https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=${inputValue}`
-    img.classList.add("qr-code")
-    document.querySelector(".content").appendChild(img)
+    // img.classList.remove("qr-code")
+    if (!img.classList.contains("qr-codeActive")) {
+        img.classList.add("qr-codeActive")
+    }
 
 })
+
+input.addEventListener("click", () => { })
 
 let form = document.querySelector("form");
 let fileInp = document.getElementById("chooseFile");
@@ -44,9 +51,9 @@ fileInp.addEventListener("change", (e) => {
 })
 
 form.addEventListener("click", () => {
-        if (contentPara.innerText == "" || contentPara.innerText == "Data Shows Here...") {
-            fileInp.click()
-        }
+    if (contentPara.innerText == "" || contentPara.innerText == "Data Shows Here...") {
+        fileInp.click()
+    }
 });
 
 contentInfo.addEventListener("click", () => { contentPara.classList.remove("copied") })

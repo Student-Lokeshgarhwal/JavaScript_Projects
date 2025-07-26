@@ -12,6 +12,7 @@ body {
 
 .mainContainer {
     display: flex;
+    /* flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
 }
@@ -30,15 +31,6 @@ body {
     transition: width .5s ease-in-out;
 }
 
-#generatorContainer:hover {
-    width: 100vw;
-    font-size: 22px;
-}
-
-#scannerContainer:hover {
-    width: 100vw;
-    font-size: 22px;
-}
 
 .heading {
     background-color: rgba(63, 62, 62, 0.276);
@@ -51,6 +43,7 @@ body {
     transition: font-size .5s ease-out;
     letter-spacing: 1.2px;
     padding: 5px 0;
+    /* margin-bottom: 120px; */
 }
 
 .box {
@@ -75,8 +68,18 @@ body {
 
 .contentText {
     margin-bottom: 18px;
-    font-size: 18px;
 }
+
+.contentText h2 {
+    font-size: 26px;
+}
+
+.contentText p {
+    margin: 7px 0;
+    font-size: 20px;
+}
+
+
 
 #inputText,
 #generateBtn {
@@ -91,18 +94,20 @@ body {
     margin-bottom: 22px;
     background-color: #5d83bf;
     color: white;
+    cursor: pointer;
 }
 
-.qr-code {
-    height: 200px;
-    width: 200px;
-    margin: 30px auto;
+.qr-codeActive {
+    height: 190px;
+    width: 190px;
+    margin: auto;
     margin-bottom: 40px;
     padding: 7px;
     transition: padding .2s ease-in-out;
+    animation: qrGenerate 1s ease-in-out;
 }
 
-.qr-code:hover {
+.qr-codeActive:hover {
     padding: 5px;
 }
 
@@ -194,4 +199,119 @@ form p {
     margin: 10px 3px 10px 3px;
     width: 50%;
     cursor: pointer;
+}
+
+@keyframes qrGenerate {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .contentText h2 {
+        text-align: center;
+    }
+
+    .mainContainer {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #generatorContainer {
+        width: 100vw;
+    }
+
+    #scannerContainer {
+        width: 100vw;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    #generatorContainer:hover {
+        width: 100vw;
+        font-size: 22px;
+    }
+
+    #scannerContainer:hover {
+        width: 100vw;
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .qr-codeActive {
+        margin: auto;
+        width: 150px;
+        height: 150px;
+    }
+
+    .QRImgActive {
+        width: 130px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    /* .qr-codeActive{
+        width: 10px;
+        height: 100px;
+    } */
+    .contentText p {
+        font-size: 18px;
+    }
+
+    .QRImgActive {
+        width: 150px;
+    }
+
+    .content {
+        width: 95vw;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .heading {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .contentText h2 {
+        font-size: 20px;
+    }
+
+    .contentText p {
+        display: none;
+    }
+
+    .qr-codeActive {
+        width: 150px;
+        height: 150px;
+    }
+
+    .QRImgActive {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .QRImgActive {
+        width: 120px;
+    }
+
+    .scannerInfoBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
