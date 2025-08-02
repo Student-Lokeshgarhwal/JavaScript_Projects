@@ -8,7 +8,6 @@ let flag = true;
 generateBtn.addEventListener("click", async () => {
     let inputValue = input.value
     img.src = `https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=${inputValue}`
-    // img.classList.remove("qr-code")
     if (!img.classList.contains("qr-codeActive")) {
         img.classList.add("qr-codeActive")
     }
@@ -41,7 +40,11 @@ fileInp.addEventListener("change", (e) => {
         QRImg.classList.remove("QRImg");
         QRImg.classList.add("QRImgActive");
         QRImg.src = URL.createObjectURL(file)
-        contentPara.innerText = result[0].symbol[0].data;
+        if (result[0].symbol[0].data) {
+            contentPara.innerText = result[0].symbol[0].data;
+        } else {
+            contentPara.innerText = "Not Suitable for This Type of QR Code Scanner.";
+        }
         scannerInfo.classList.remove("scannerInfo");
         if (!scannerInfo.classList.contains("scannerInfoActive")) {
             scannerInfo.classList.add("scannerInfoActive");
