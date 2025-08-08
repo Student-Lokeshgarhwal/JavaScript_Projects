@@ -6,13 +6,13 @@ Welcome to WordleGame, a fun and interactive word-guessing game built using HTML
 
 📋 Table of Contents
 
-🎮 Features
+🚀 Features
 
 🛠️ Tech Stack
 
 📂 Project Structure
 
-🚀 How to Play
+🎮 How to Play
 
 🤝 Contributing
 
